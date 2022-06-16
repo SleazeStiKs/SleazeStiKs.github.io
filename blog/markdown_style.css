@@ -780,4 +780,6 @@ a.overlay {
     background-color: var(--color-button-blue-selected);
     text-decoration: none;
 }
-
+.floatingchat-container-wrap {
+    bottom: 5rem !important;
+}
