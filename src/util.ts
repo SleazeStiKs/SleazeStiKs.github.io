@@ -23,7 +23,7 @@ export function getPreviousAndNextPosts(
 export function getAllTags(posts: MDXInstance<Post>[] = []) {
 	const allTags = new Set<string>();
 	posts.forEach((post) => {
-		post.frontmatter.tags?.map((tag) => allTags.add(tag.toLowerCase()));
+		post.frontmatter.tags?.map((tag) => allTags.add(tag.toUpperCase()));
 	});
 	return [...allTags];
 }
