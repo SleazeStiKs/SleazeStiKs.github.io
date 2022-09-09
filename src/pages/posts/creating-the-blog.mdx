@@ -1,0 +1,39 @@
+---
+layout: "@/layouts/BlogPost"
+title: Creating The Blog
+publishDate: 22 Jan 2022
+description: How I created my first blog website.
+tags: ["Dev Blog"]
+---
+
+Hi, I finally got around to creating a blog so I can document my work and stop making excuses for why I can't finish doing stuff.
+
+This Blog was made with pure [**HTML**](https://github.com/SleazeStiKs/SleazeStiKs.github.io), [**CSS**](https://github.com/SleazeStiKs/SleazeStiKs.github.io) and [**Javascript**](https://github.com/SleazeStiKs/SleazeStiKs.github.io). The posts are basic markdown files which are converted to HTML using [**marked**](https://marked.js.org/).
+
+As you might have noticed, all blogs are redirected to the same page but with different content. This is done by using **query strings**. I use javascript to generate the links with the query parameters:
+
+```js
+function addParameter(name) {
+    window.location.href = "/blog/post/?id=" + name;
+}
+```
+
+As soon as the [post page](https://github.com/SleazeStiKs/SleazeStiKs.github.io/blob/main/blog/post/index.html) loads, I get the query string from the URL and use its value, to find and display the corresponding markdown file:
+
+```js
+function getURLParameter(parameter)
+{
+    var pageURL = window.location.search.substring(1);
+    var URLVariables = pageURL.split('&');
+    for (var i = 0; i < URLVariables.length; i++) 
+    {
+        var parameterName = URLVariables[i].split('=');
+        if (parameterName[0] == parameter) 
+        {
+            return parameterName[1];
+        }
+    }
+}
+```
+
+In the future I plan to add custom features, to be able to display charts, syntax highlighted code, etc.

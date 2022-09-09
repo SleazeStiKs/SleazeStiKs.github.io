@@ -6,7 +6,7 @@ import { sortMDByDate } from "@/util";
 import type { Post } from "@/types";
 
 const meta = {
-	title: "Astro Cactus",
+	title: "Sleaze",
 	description: "The perfect starter for your perfect blog.",
 };
 
@@ -17,12 +17,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
 <PageLayout meta={meta}>
 	<section>
-		<h1 class="mb-6 title">Hello World!</h1>
+		<h1 class="mb-6 title">Hello there!</h1>
 		<p class="mb-4">
-			Hi, I’m a theme for Astro, an example of how you can use this starter to
-			create a personal blog. If you want to know more about how you can
-			customise me, add more posts, and make it your own, click on one of the
-			social links which will take you to my repo.
+			I'm Sleaze, a passionate coder and gamer! I love to make websites, games
+			and fiddle around with any sort of technical stuff. I'm coding since 2019
+			and you can check out my work on my Github! Feel free to visit my socials.
 		</p>
 		<SocialList />
 	</section>
@@ -31,13 +30,14 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		<ul class="space-y-4 sm:space-y-2">
 			{
 				allPostsByDate.map((p) => (
-					<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+					<li class="[&_q]:w-full flex flex-wrap items-center gap-x-2">
 						<BlogPostPreview post={p} as="h2" />
 					</li>
 				))
 			}
 		</ul>
 	</section>
+	<!--
 	<section class="mt-16">
 		<h2 class="mb-4 text-xl title">Technologies</h2>
 		<ul class="space-y-4 sm:space-y-2">
@@ -87,4 +87,5 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			</li>
 		</ul>
 	</section>
+	-->
 </PageLayout>
