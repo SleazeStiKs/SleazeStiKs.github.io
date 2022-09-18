@@ -1,9 +1,9 @@
 const siteMeta = {
-  title: "Astro Theme Cactus",
-  description: "An opinionated starter theme for Astro",
-  lang: "en-GB",
-  ogLocale: "en_GB",
-  githubUrl: "https://github.com/chrismwilliams/astro-theme-cactus",
+  title: "Sleaze",
+  description: "Sleaze Personal Website",
+  lang: "en-US",
+  ogLocale: "en_US",
+  githubUrl: "https://github.com/sleazestiks/sleazestiks.github.io",
   themeColorLight: "#fafafa",
   themeColorDark: "#1d1f21",
 }

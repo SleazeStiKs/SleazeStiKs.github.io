@@ -21,7 +21,7 @@ const { page, allTags } = Astro.props as Props;
 
 const meta = {
 	title: "Posts",
-	description: "A collection of posts by me for a starter Astro theme",
+	description: "Blog Posts",
 };
 
 const paginationProps = {
@@ -47,7 +47,7 @@ const paginationProps = {
 			<ul class="text-left space-y-8">
 				{
 					page.data.map((p) => (
-						<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+						<li class="[&_q]:w-full flex flex-wrap items-center gap-x-2">
 							<BlogPostPreview post={p} as="h2" withDesc />
 						</li>
 					))
@@ -58,11 +58,11 @@ const paginationProps = {
 		{
 			allTags.length && (
 				<aside>
-					<h2 class="flex items-center mb-4 text-lg font-semibold">
+					<h2 class="mb-4 flex items-center text-lg font-semibold">
 						<svg
 							aria-hidden="true"
 							xmlns="http://www.w3.org/2000/svg"
-							class="w-6 h-6"
+							class="h-6 w-6"
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
 							stroke="currentColor"
@@ -77,11 +77,11 @@ const paginationProps = {
 						</svg>
 						Tags
 					</h2>
-					<ul class="flex flex-wrap gap-2 text-bgColor">
+					<ul class="text-bgColor flex flex-wrap gap-2">
 						{allTags.map((tag) => (
 							<li>
 								<a
-									class="flex items-center justify-center p-1 rounded-lg bg-accent"
+									class="bg-accent flex items-center justify-center rounded-lg p-1"
 									href={`/tags/${tag}`}
 									aria-label={`View all posts with the tag: ${tag}`}
 								>
@@ -90,7 +90,7 @@ const paginationProps = {
 							</li>
 						))}
 					</ul>
-					<span class="block mt-4 sm:text-right">
+					<span class="mt-4 block sm:text-right">
 						<a
 							class="sm:hover:text-accent"
 							href="/tags"
