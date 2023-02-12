@@ -1,11 +1,9 @@
-<div class="flex flex-wrap items-center sm:items-center gap-x-4">
-	<div></div>
-</div>
+---
+import ProjectComponent from "@/components/ProjectComponent";
+---
 
-<p>Title</p>
-<ul class="flex items-center flex-1 gap-x-4 sm:flex-initial">
-	<li>
-		<span class="sr-only">Github</span>
-		<img src="about-astro.png" />
-	</li>
-</ul>
+<div class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+	<ProjectComponent title="1. Project" />
+	<ProjectComponent title="2. Project" />
+	<ProjectComponent title="3. Project" />
+</div>
