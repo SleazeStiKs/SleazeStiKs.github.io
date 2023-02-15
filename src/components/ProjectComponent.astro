@@ -1,6 +1,8 @@
 ---
-const { title, content } = Astro.props;
-const href = "./projects/" + title.toLowerCase().replace(/\s+/g, "_");
+const { title, content, customURL } = Astro.props;
+const href = customURL
+	? customURL
+	: "./projects/" + title.toLowerCase().replace(/\s+/g, "_");
 ---
 
 <div class="flex flex-wrap items-center sm:items-center gap-x-4 content-start">
