@@ -1,28 +1,22 @@
 ---
 import PageLayout from "@/layouts/Base";
-import BlogPostPreview from "@/components/BlogPostPreview";
 import SocialList from "@/components/SocialList";
 import ProjectsList from "@/components/ProjectsList";
-import { sortMDByDate } from "@/util";
-import type { Post } from "@/types";
 
 const meta = {
 	title: "Home",
 	description: "Sleaze",
 };
-
-const MAX_POSTS = 10;
-const allPosts = await Astro.glob<Post>("./posts/*.mdx");
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
 <PageLayout meta={meta}>
 	<section>
 		<h1 class="mb-6 title">Hello there!</h1>
 		<p class="mb-4">
-			I'm Sleaze, a passionate coder and gamer! I love to make websites, games
-			and fiddle around with any sort of technical stuff. I'm coding since 2019
-			and you can check out my work on my Github! Feel free to visit my socials.
+			I'm a 18-year-old hobbyist developer from Germany and have 
+			a great interest in electronics and robotics. 
+			Since 2019 (when I started programming) I developd many different 
+			skills but quickly set my focus on expanding and coding games.
 		</p>
 		<SocialList />
 	</section>
@@ -30,18 +24,5 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 	<section class="mt-12">
 		<h2 class="mb-4 text-xl title">Projects</h2>
 		<ProjectsList />
-	</section>
-
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="mb-4 text-xl title">Posts</h2>
-		<ul class="space-y-4 sm:space-y-2">
-			{
-				allPostsByDate.map((p) => (
-					<li class="[&_q]:w-full flex flex-wrap items-center gap-x-2">
-						<BlogPostPreview post={p} as="h2" />
-					</li>
-				))
-			}
-		</ul>
 	</section>
 </PageLayout>
