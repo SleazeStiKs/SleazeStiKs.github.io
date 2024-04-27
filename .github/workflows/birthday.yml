@@ -21,7 +21,6 @@ jobs:
     - name: Update README
       run: |-
         python update_birthday.py
-        cat README.md
     - name: Commit and push if changed
       run: |-
         git diff
